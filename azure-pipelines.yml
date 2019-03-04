@@ -14,10 +14,14 @@ variables:
   docuid: 'angular12acr'
   docpwd: '0K/9ckDLgYChzjSGrONjTs1z4ET5APnN'
 
-steps:
+steps for build:
 - script: docker build -f Dockerfile -t $(imageName) .
-    docker login $(docuid) $(docpwd) $(docuid).azurecr.io
-    docker tag $(imageName) MyFirstImage
-    docker push $(imageName)
 
- 
+steps for login:
+- script:docker login $(docuid) $(docpwd) $(docuid).azurecr.io
+    
+steps for tagging:
+- script:docker tag $(imageName) MyFirstImage
+    
+steps for pushing:
+- script:docker push $(imageName)
