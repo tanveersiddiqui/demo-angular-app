@@ -11,12 +11,10 @@ pool:
 
 variables:
   imageName: 'tanveer-demo-angular2:$(build.buildId)'
+  docuid: 'angular12acr'
+  docpwd: '0K/9ckDLgYChzjSGrONjTs1z4ET5APnN'
 
 steps:
-- script: docker build -f Dockerfile -t $(imageName) .
-  displayName: 'docker build'
-  
-docker build -t angular12acr.azurecr.io/$(imageName) .
-    docker login -u angular12acr -p 0K/9ckDLgYChzjSGrONjTs1z4ET5APnN angular12acr.azurecr.io
-    docker push angular12acr.azurecr.io/$(imageName)
-    
+- script: docker build -t $(docuid).azurecr.io/$(imageName) .
+    docker login -u $(docuid) -p $(docpwd) $(docuid).azurecr.io
+    docker push $(docuid).azurecr.io/$(imageName)
