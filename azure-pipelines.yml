@@ -15,6 +15,7 @@ variables:
   docpwd: '0K/9ckDLgYChzjSGrONjTs1z4ET5APnN'
 
 steps:
-- script: docker build -f Dockerfile -t $(docuid).azurecr.io/$(imageName) .
+- script: docker build -f Dockerfile -t $(imageName) .
     docker login $(docuid) $(docpwd) $(docuid).azurecr.io
-    docker push $(docuid).azurecr.io/$(imageName)
+    docker tag $(imageName) MyFirstImage
+    docker push $(imageName)
