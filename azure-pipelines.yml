@@ -15,9 +15,9 @@ variables:
   docpwd: '0K/9ckDLgYChzjSGrONjTs1z4ET5APnN'
 
 steps:
-- script: docker build -f Dockerfile -t $(imageName) .
+- script: docker build -f Dockerfile -t $(docuid).azurecr.io/$(imageName) .
   displayName: 'docker build'
 - script: docker login -u "$(docuid)" -p "$(docpwd)" $(docuid).azurecr.io
   displayName: 'docker login to azure registry'
-- script: docker push $(imageName)
+- script: docker push $(docuid).azurecr.io/$(imageName)
   displayName: 'docker push imagees'
