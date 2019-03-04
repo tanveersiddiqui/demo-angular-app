@@ -19,3 +19,4 @@ steps:
 docker build -t angular12acr.azurecr.io/$(imageName) .
     docker login -u angular12acr -p 0K/9ckDLgYChzjSGrONjTs1z4ET5APnN angular12acr.azurecr.io
     docker push angular12acr.azurecr.io/$(imageName)
+    
