@@ -16,6 +16,4 @@ variables:
 
 steps:
 - script: docker build -f Dockerfile -t $(imageName) .
-    docker login $(docuid) $(docpwd) $(docuid).azurecr.io
-    docker tag $(imageName) MyFirstImage
-    docker push $(imageName)
+  displayName: 'docker build'
