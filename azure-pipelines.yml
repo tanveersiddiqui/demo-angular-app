@@ -22,4 +22,4 @@ steps:
 - script: docker tag $(imageName) MyFirstImage
   displayName: 'docker tagging image'
 - script: docker push $(imageName)
-  displayName: 'docker push image'
+  displayName: 'docker push imagees'
