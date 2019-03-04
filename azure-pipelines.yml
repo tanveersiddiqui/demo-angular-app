@@ -16,5 +16,5 @@ variables:
 
 steps:
 - script: docker build -t $(docuid).azurecr.io/$(imageName) .
-    docker login --username=$(docuid) --password=$(docpwd) $(docuid).azurecr.io
+    docker login --u=$(docuid) --password=$(docpwd) $(docuid).azurecr.io
     docker push $(docuid).azurecr.io/$(imageName)
