@@ -19,7 +19,7 @@ steps:
   displayName: 'docker build'
 - script: docker login -u "$(docuid)" -p "$(docpwd)" $(docuid).azurecr.io
   displayName: 'docker login'
-- script: docker tag $(imageName) MyFirstImage
+- script: docker tag $(imageName) myfirstimage
   displayName: 'docker tagging image'
 - script: docker push $(imageName)
   displayName: 'docker push imagees'
