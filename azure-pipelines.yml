@@ -10,9 +10,9 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'tanveer-demo-angular2:$(build.buildId)'
-  docuid: 'angular12acr'
-  docpwd: '0K/9ckDLgYChzjSGrONjTs1z4ET5APnN'
+  imageName: 'demo-angular-app2:$(build.buildId)'
+  docuid: 'angularcontainer'
+  docpwd: '0lvQNQ/MdsalZ5I0DjMwHzrllIV51R9D'
 
 steps:
 - script: docker build -f Dockerfile -t $(docuid).azurecr.io/$(imageName) .
